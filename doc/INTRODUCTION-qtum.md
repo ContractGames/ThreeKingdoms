@@ -42,6 +42,7 @@ the rise of the fortunes of Han began when Liu Bang the ancestor slew a white se
 </div>
 
 ## Vote for the country you support
+
 ### Qtum wallet
 Click the Send To button on the left side of the wallet under the Smart Contracts and input these information:
 1. the contract [address](http://contract.games) of the Three Kingdoms
