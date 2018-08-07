@@ -40,6 +40,7 @@
 
 
 ## 给你支持的国家投资
+### 用Qtum钱包操作
 点击Qtum钱包左侧的Smart Contracts下的Send To按钮并输入下面信息：
 1. 填入游戏的合约地址，地址见游戏[首页](http://contract.games/)
 2. 填入合约的ABI
@@ -49,6 +50,17 @@
 6. 填入你的钱包地址
 
 ![image](./pic/sendto.jpeg)
+
+### 用Qtum Electrum轻钱包操作
+下载最新版[Qtum Electrum](https://github.com/qtumproject/qtum-electrum),按下图进行操作：
+
+![image](./pic/electrum-1.png)
+
+![image](./pic/electrum-2.png)
+
+![image](./pic/electrum-3.png)
+
+![image](./pic/electrum-4.png)
 
 ## 如果您投资的国家获得胜利，您将会获得奖励
 奖励将会在游戏结束的一段时间内发送到您投资的发送者地址。
