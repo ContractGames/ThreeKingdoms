@@ -54,13 +54,13 @@
 ### 用Qtum Electrum轻钱包操作
 下载最新版[Qtum Electrum](https://github.com/qtumproject/qtum-electrum),按下图进行操作：
 
-![image](./pic/electrum-1.jpeg)
+![image](./pic/electrum-1.png)
 
-![image](./pic/electrum-2.jpeg)
+![image](./pic/electrum-2.png)
 
-![image](./pic/electrum-3.jpeg)
+![image](./pic/electrum-3.png)
 
-![image](./pic/electrum-4.jpeg)
+![image](./pic/electrum-4.png)
 
 ## 如果您投资的国家获得胜利，您将会获得奖励
 奖励将会在游戏结束的一段时间内发送到您投资的发送者地址。
