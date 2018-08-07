@@ -3,7 +3,7 @@
 ## Game background：
 East flows the mighty river, Sweeping away the heroes of time past; This ancient rampart on its western shore; Is Zhou Yu's Red; Cliff of three Kingdoms' fame; Here jagged boulders pound the clouds, Huge waves tear banks apart, And foam piles up a thousand drifts of snow; A scene fair as a painting, Countless the brave men here in time gone by!
 I dream of Marshal Zhou Yu in his day; With his new bride, the Lord Qiao's younger daughter, Dashing and debonair, Silk-capped, with feather fan, He laughed and jested; While the dread enemy fleet was burned to ashes! In fancy through those scenes of old I range. My heart overflowing, surely a figure of fun. A man gray before his time. Ah, this life is a dream, Let me drink to the moon on the river!
-Domains under heaven, after a long period of division, tends to unite; after a long period of union, tends to divide. This has been so since antiquity. When the rule of the Zhou Dynasty weakened, seven contending kingdoms sprang up, warring one with another until the kingdom of Qin prevailed and possessed the empire. But when Qin's destiny had been fulfilled, arose two opposing kingdoms, Chu and Han, to fight for the mastery. And Han was the victor.
+Domains under heaven, after a long period of division, tends to unite； after a long period of union, tends to divide. This has been so since antiquity. When the rule of the Zhou Dynasty weakened, seven contending kingdoms sprang up, warring one with another until the kingdom of Qin prevailed and possessed the empire. But when Qin's destiny had been fulfilled, arose two opposing kingdoms, Chu and Han, to fight for the mastery. And Han was the victor.
 the rise of the fortunes of Han began when Liu Bang the ancestor slew a white serpent to raise the banners of uprising, which only ended when the whole empire belonged to Han. This magnificent heritage was handed down in successive Han emperors for two hundred years, till the rebellion of Wang Mang caused a disruption. But soon Liu Xiu the Latter Han Founder restored the empire, and Han emperors continued their rule for another two hundred years till the days of Emperor Xian, which were doomed to see the beginning of the empire's division into three parts, known to history as The Three Kingdoms. Liu Bei, the load of Shu, is the uncle of the Han Emperor Xian. Cao Cao unified the north and was lorded the Wei. Sun Quan inherited on the foundation of his father and brother. Although they have attacked each other, they are only between one city and one land. When Wei wants to swallow Shu, Wu will definitely fight against the enemy and fight against Wei's army. Wei potential could not merged any country and had to stop.
 
 
@@ -42,6 +42,7 @@ the rise of the fortunes of Han began when Liu Bang the ancestor slew a white se
 </div>
 
 ## Vote for the country you support
+### Qtum wallet
 Click the Send To button on the left side of the wallet under the Smart Contracts and input these information:
 1. the contract [address](http://contract.games) of the Three Kingdoms
 2. the ABI of the contract
@@ -50,6 +51,17 @@ Click the Send To button on the left side of the wallet under the Smart Contract
 5. input how many tokens you want to vote
 6. input voter's address 
 ![image](./pic/sendto.jpeg)
+
+### Qtum Electrum (SPV of Qtum)
+Download the latest version of [Qtum Electrum].For details, see the following figures:
+
+![image](./pic/electrum-1.jpeg)
+
+![image](./pic/electrum-2.jpeg)
+
+![image](./pic/electrum-3.jpeg)
+
+![image](./pic/electrum-4.jpeg)
 
 ## If you won this game,you will get reward.
 the reward will be sent to each voter's wallet address a few minutes after the end of the game
