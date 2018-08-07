@@ -40,8 +40,8 @@
 
 
 ## 给你支持的国家投资
-### 用Qtum钱包操作
-点击Qtum钱包左侧的Smart Contracts下的Send To按钮并输入下面信息：
+### 用Qtum core 钱包操作
+下载[Qtum core钱包](https://github.com/qtumproject/qtum/releases)，安装完成后点击左侧的Smart Contracts下的Send To按钮并输入下面信息：
 1. 填入游戏的合约地址，地址见游戏[首页](http://contract.games/)
 2. 填入合约的ABI
 3. 调用合约的vote函数
@@ -52,7 +52,7 @@
 ![image](./pic/sendto.jpeg)
 
 ### 用Qtum Electrum轻钱包操作
-下载最新版[Qtum Electrum](https://github.com/qtumproject/qtum-electrum),按下图进行操作：
+下载最新版[Qtum Electrum](https://github.com/qtumproject/qtum-electrum/releases),按下图进行操作：
 
 ![image](./pic/electrum-1.png)
 

@@ -42,8 +42,9 @@ the rise of the fortunes of Han began when Liu Bang the ancestor slew a white se
 </div>
 
 ## Vote for the country you support
-### Qtum wallet
-Click the Send To button on the left side of the wallet under the Smart Contracts and input these information:
+
+### Qtum core wallet
+Download [Qtum core wallet](https://github.com/qtumproject/qtum/releases).After setup is complete,click the Send To button on the left side of the wallet under the Smart Contracts and input these information:
 1. the contract [address](http://contract.games) of the Three Kingdoms
 2. the ABI of the contract
 3. call the vote function to vote for the country you support
@@ -53,7 +54,7 @@ Click the Send To button on the left side of the wallet under the Smart Contract
 ![image](./pic/sendto.jpeg)
 
 ### Qtum Electrum (SPV of Qtum)
-Download the latest version of [Qtum Electrum](https://github.com/qtumproject/qtum-electrum).For details, see the following figures:
+Download the latest version of [Qtum Electrum](https://github.com/qtumproject/qtum-electrum/releases).For details, see the following figures:
 
 ![image](./pic/electrum-1.png)
 
