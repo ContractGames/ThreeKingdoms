@@ -81,12 +81,13 @@ contract ThreeKingdomsQtum {
     * return price per vote in ratioDecimal,
     * that is, the return value / ratioDecimal is the actual price
     * when kingdomBalanceToken = 0, return 0.1
-    * when kingdomBalanceToken = 1024, return 0.11
+    * when kingdomBalanceToken = 32, return 0.12
+    * when kingdomBalanceToken = 992, return 0.2
     */
     function getVotePrice(uint8 kingdomIndex) public view validKingdomIndex(kingdomIndex)
             returns(uint) {
         uint kingdomBalanceToken = data[kingdomIndex].balance / tokenDecimal;
-        return (ratioDecimal * floorLog2(kingdomBalanceToken + 1024)) / 100;
+        return (ratioDecimal * floorLog2(kingdomBalanceToken + 32)) / 50;
     }
     /**
     * vote token for your kingdom
@@ -233,13 +234,6 @@ contract ThreeKingdomsQtum {
                 }
             }
         }
-    }
-
-    //  suicide contract if it's out of control.
-    function kill() external {
-        require(owner == msg.sender, "only owner can finalize the game");
-        require(block.number > ((3600 * 24 * 30) / blockTime) + startBlockNum, "only force game over after 30 days");
-        selfdestruct(owner);
     }
 
     /**
@@ -408,5 +402,14 @@ contract ThreeKingdomsQtum {
         require(owner == msg.sender, "only owner can force game over");
         require(block.number > ((3600 * 24 * 30) / blockTime) + startBlockNum, "only force game over after 30 days");
         endBlockNum = block.number - 1;
+    }
+
+    /**
+    * suicide contract if it's out of control.
+    */
+    function kill() external {
+        require(owner == msg.sender, "only owner can finalize the game");
+        require(block.number > ((3600 * 24 * 30) / blockTime) + startBlockNum, "only force game over after 30 days");
+        selfdestruct(owner);
     }
 }
