@@ -401,4 +401,13 @@ contract ThreeKingdoms {
         require(block.number > ((3600 * 24 * 30) / blockTime) + startBlockNum, "only force game over after 30 days");
         endBlockNum = block.number - 1;
     }
+
+    /**
+    * suicide contract if it's out of control.
+    */
+    function kill() external {
+        require(owner == msg.sender, "only owner can finalize the game");
+        require(block.number > ((3600 * 24 * 30) / blockTime) + startBlockNum, "only force game over after 30 days");
+        selfdestruct(owner);
+    }
 }
