@@ -9,7 +9,7 @@ the rise of the fortunes of Han began when Liu Bang the ancestor slew a white se
 
 ## Game detail：
 
-1. Price: The price increases as the increase of funds accepted by countries. The earlier the same funds are invested, the more combat value will be obtained. For example, if the kingdomBalanceToken is 0, then price is 0.1, and if kingdomBalanceToken is 1024, then price will be 0.11. KingdomBalance is the total amount of QTUM received by the country.The formula is:
+1. Price: The price increases as the increase of funds accepted by countries. The earlier the same funds are invested, the more combat value will be obtained. For example, if the kingdomBalanceToken is 0, then price is 0.1, and if kingdomBalanceToken is 32, then price will be 0.12. KingdomBalance is the total amount of QTUM received by the country.The formula is:
 
 <div align=center>
 
