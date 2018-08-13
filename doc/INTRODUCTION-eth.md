@@ -8,19 +8,19 @@ the rise of the fortunes of Han began when Liu Bang the ancestor slew a white se
 
 
 ## Game detail：
-1. Price: The price increases as the increase of funds accepted by countries. The earlier the same funds are invested, the more combat value will be obtained. For example, if the kingdomBalanceToken is 0, then price is 0.01, and if kingdomBalanceToken is 1024, then price will be 0.011. KingdomBalance is the total amount of ETH received by the country.The formula is:
+1. Price: The price increases as the increase of funds accepted by countries. The earlier the same funds are invested, the more combat value will be obtained. For example, if the kingdomBalanceToken is 0, then price is 0.01, and if kingdomBalanceToken is 992, then price will be 0.02. KingdomBalance is the total amount of ETH received by the country.The formula is:
 
 <div align=center>
  
-![image](./pic/price.gif)
- 
+<img src="./pic/price-eth.png" width="350" height="30" /> 
+
 </div>
 
 2. Combat value: Each ETH invested by each investor will be converted to the country's combat value according to a certain proportion. The minimum amount of investor investment is 0.01 eth. The formula is: 
 
 <div align=center>
 
-![image](./pic/combatvalue.gif)
+<img src="./pic/combatvalue-eth.png" width="300" height="30"/>
 
 </div>
 
@@ -30,13 +30,13 @@ the rise of the fortunes of Han began when Liu Bang the ancestor slew a white se
 
 5. Bonus Pool: on Ethereum, 85% of the investment amount of each investor will be put in the bonus pool, and the remaining 15% will be used as the website maintenance fee and the gas consumption.
 
-6. The initial time is 5760 block, about 24 hours. When someone supporting, the countdown increased by 4 block, but the countdown would not exceed 5760 block. Note: the time is calculated according to the block interval.
+6. The initial time is 40120 block, about one week. When someone supporting, the countdown increased by 4 block, but the countdown would not exceed 40320 block. Note: the time is calculated according to the block interval.
 
 7. Reward: If a investor wins, the prize pool will distribute the bonus to the winning investor according to the investment ratio. The investment ratio is:
 
 <div align=center>
 
-![image](./pic/ratio.gif)
+<img src="./pic/ratio.png" width="600" height="30"/>
 
 </div>
 
