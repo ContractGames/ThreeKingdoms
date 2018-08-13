@@ -19,7 +19,7 @@ contract ThreeKingdoms {
     uint endBlockNum;
     // max block number since last deposit, approximate 24 hours
     uint constant blockTime = 15;
-    uint constant maxBlockNum = (24 * 3600) / blockTime;
+    uint constant maxBlockNum = (7 * 24 * 3600) / blockTime;
     // min vote value, 0.01 ETH
     uint constant tokenDecimal = 1e18;
     uint constant minVoteValue = tokenDecimal / 100;
@@ -81,12 +81,13 @@ contract ThreeKingdoms {
     * return price per vote in ratioDecimal,
     * that is, the return value / ratioDecimal is the actual price
     * when kingdomBalanceToken = 0, return 0.01
-    * when kingdomBalanceToken = 1024, return 0.011
+    * when kingdomBalanceToken = 32, return 0.012
+    * when kingdomBalanceToken = 992, return 0.02
     */
     function getVotePrice(uint8 kingdomIndex) public view validKingdomIndex(kingdomIndex)
             returns(uint) {
         uint kingdomBalanceToken = data[kingdomIndex].balance / tokenDecimal;
-        return (ratioDecimal * floorLog2(kingdomBalanceToken + 1024)) / 1000;
+        return (ratioDecimal * floorLog2(kingdomBalanceToken + 32)) / 500;
     }
     /**
     * vote token for your kingdom
