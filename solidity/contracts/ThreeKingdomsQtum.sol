@@ -29,7 +29,7 @@ contract ThreeKingdomsQtum {
     }
     // max block number since last deposit, approximate 24 hours
     uint constant blockTime = 144;
-    uint constant maxBlockNum = (24 * 3600) / blockTime;
+    uint constant maxBlockNum = (7 * 24 * 3600) / blockTime;
     // min vote value, 0.1 QTUM
     uint constant tokenDecimal = 1e8;
     uint constant minVoteValue = tokenDecimal / 10;
