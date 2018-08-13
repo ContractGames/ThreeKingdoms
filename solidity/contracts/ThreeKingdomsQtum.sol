@@ -17,6 +17,16 @@ contract ThreeKingdomsQtum {
     uint startBlockNum;
     // the block number end up with
     uint endBlockNum;
+    // final reward value
+    uint finalRewardValue;
+    // run finalize() multiple times
+    uint transferCallIndex;
+    uint constant maxTransferPerCall = 512;
+    struct TransferCount {
+        uint firstIndex;
+        uint lastIndex;
+        uint currentIndex;
+    }
     // max block number since last deposit, approximate 24 hours
     uint constant blockTime = 144;
     uint constant maxBlockNum = (24 * 3600) / blockTime;
@@ -45,6 +55,9 @@ contract ThreeKingdomsQtum {
 
         startBlockNum = block.number;
         endBlockNum = block.number + maxBlockNum;
+
+        finalRewardValue = 0;
+        transferCallIndex = 0;
     }
     function getOwner() external view returns(address) {
         return owner;
@@ -252,26 +265,38 @@ contract ThreeKingdomsQtum {
 
         require(res, "the game is not over");  // game should be over
 
-        // get value reward to voters
-        uint rewardValue = getRewardValue();
+        // get final value reward to voters
+        if (finalRewardValue == 0) {
+            finalRewardValue = getRewardValue();
+        }
+
+        // get transfer count obj
+        TransferCount memory tc;
+        tc.firstIndex = transferCallIndex * maxTransferPerCall;
+        tc.lastIndex = tc.firstIndex + maxTransferPerCall - 1;
+        tc.currentIndex = 0;
+        transferCallIndex += 1;
 
         // reward voters according to different end status
         if (resType == 2) {
-            reward(indexSort[0], balanceSort[0], rewardValue);
+            reward(indexSort[0], balanceSort[0], finalRewardValue, tc);
         } else {
             uint totalBalance = balanceSort[1] + balanceSort[2];
-            reward(indexSort[1], totalBalance, rewardValue);
-            reward(indexSort[2], totalBalance, rewardValue);
+            reward(indexSort[1], totalBalance, finalRewardValue, tc);
+            reward(indexSort[2], totalBalance, finalRewardValue, tc);
         }
 
         // withdraw left money to owner
-        withdraw();
+        withdraw(tc);
     }
 
     /**
     * get value to reward voters
     */
     function getRewardValue() public view returns(uint) {
+        if (finalRewardValue != 0) {
+            return finalRewardValue;
+        }
         uint total = address(this).balance;
         return (total * ratio) / ratioDecimal;
     }
@@ -283,19 +308,23 @@ contract ThreeKingdomsQtum {
         address indexed _to,
         uint _value
     );
-    function reward(uint8 kingdomIndex, uint totalBalance, uint rewardValue) 
+    function reward(uint8 kingdomIndex, uint totalBalance, uint rewardValue, TransferCount tc) 
             private validKingdomIndex(kingdomIndex) {
         uint voterLength = data[kingdomIndex].voters.length;
         for (uint i = 0; i < voterLength; i++) {
             address voterAddress = data[kingdomIndex].voters[i];
             uint voterBlance = data[kingdomIndex].votes[voterAddress];
             uint voterAmount = getRewardAmount(voterBlance, totalBalance, rewardValue);
-            reward(voterAddress, voterAmount);
+            reward(voterAddress, voterAmount, tc);
         }
     }
-    function reward(address addr, uint amount) private {
-        addr.transfer(amount);
-        emit Reward(addr, amount);
+    function reward(address addr, uint amount, TransferCount tc) private {
+        if (tc.currentIndex >= tc.firstIndex && tc.currentIndex <= tc.lastIndex) {
+            addr.transfer(amount);
+            emit Reward(addr, amount);
+        }
+        
+        tc.currentIndex += 1;
     }
     function getRewardAmount(uint voterBalance, uint totalBalance, uint rewardValue) public pure returns(uint) {
         return (rewardValue * voterBalance) / totalBalance;
@@ -304,9 +333,13 @@ contract ThreeKingdomsQtum {
     /**
     * withdraw left token to reward the owner
     */
-    function withdraw() private {
-        uint amount = address(this).balance;
-        owner.transfer(amount);
+    function withdraw(TransferCount tc) private {
+        if (tc.currentIndex >= tc.firstIndex && tc.currentIndex <= tc.lastIndex) {
+            uint amount = address(this).balance;
+            owner.transfer(amount);
+        }
+
+        tc.currentIndex += 1;
     }
 
     function getBalance(uint8 kingdomIndex) public view validKingdomIndex(kingdomIndex) 
