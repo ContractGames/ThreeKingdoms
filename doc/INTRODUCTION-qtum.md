@@ -31,7 +31,7 @@ the rise of the fortunes of Han began when Liu Bang the ancestor slew a white se
 
 5. Bonus Pool: on Qtum, 90% of the investment amount of each investor will be put in the bonus pool, and the remaining 10% will be used as the website maintenance fee and the gas consumption.
 
-6. Condition of game over: The initial time is 600 block, about 24 hours. When someone supporting, the countdown increased by 1 block, but the countdown would not exceed 600 block. Note: the time is calculated according to the block interval.
+6. Condition of game over: The initial time is 4200 block, about one week. When someone supporting, the countdown increased by 1 block, but the countdown would not exceed 4200 block. Note: the time is calculated according to the block interval.
 
 7. Reward: If a investor wins, the prize pool will distribute the bonus to the winning investor according to the investment ratio.
 
